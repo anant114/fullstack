@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Upload or Drag and Drop a Video File</h2>
+        <form action="{% url 'upload_video' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="videoFile" class="form-control mb-2">
+            <button type="submit" class="btn btn-primary">Upload Video</button>
+        </form>
+    </div>
+</body>
+</html>
